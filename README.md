@@ -1,6 +1,6 @@
 # txxUI
 
-根据需求文档或原型，在 MasterGo 中绘制可编辑的实际 UI 稿。
+根据需求文档或原型，结合 Taste 和项目已有设计规范，在 MasterGo 中绘制可编辑的实际 UI 稿。
 
 txxUI 与 [txxprd](https://github.com/mastarai2024-del/txxprd) 配合：txxprd 写清需求，txxUI 将需求落实到指定画布，再把最终画板、截图和未决项交回文档流程。
 
@@ -35,6 +35,18 @@ git clone https://github.com/mastarai2024-del/txxUI.git "${CODEX_HOME:-$HOME/.co
 
 安装后在能重新发现技能的会话中使用 `$txxui`。已有同名技能时先备份和比较，再决定更新方式。
 
+首次设计、优化或视觉评审时，txxUI 会自动检查 Taste，缺失时安装完整技能目录；已有完整版本直接复用，不覆盖或自动升级。也可以在安装后立即准备依赖：
+
+```bash
+python3 "${CODEX_HOME:-$HOME/.codex}/skills/txxui/scripts/ensure_taste.py"
+```
+
+脚本需要 Python 3。优先复用 Codex、共享 Agent 和 Claude 技能目录下的 `design-taste-frontend` / `taste-skill`；新安装默认进入 Codex 技能目录。来源为 [官方 Taste v2](https://github.com/Leonxlnx/taste-skill/tree/f624f37a8c650b9cc550253104925efe4c8de246/skills/taste-skill)，固定提交，包含 references、scripts、library 和 assets。优先使用本机官方 skill-installer；没有该辅助工具时，用 Python 标准库下载同一固定提交的档案，仅提取目标技能目录，不执行下载内容。安装中断、离线或已有目录不完整时会返回具体错误并保留原目录。
+
+返回的 `skill_file` 可由 Agent 直接读取，本次任务即可使用；新技能在下一轮对话的技能发现列表中可用。`--check-only` 只检查；`--skills-root /path/to/isolated/skills` 仅在指定目录检查和安装，适合隔离验证。
+
+Taste 完整流程原本面向营销网页。txxUI 在 App、后台和已有产品中采用其层级、排版、布局与截图审查方法，配色、字体和按钮形态仍由项目设计规范决定；不会把随机品牌配色、网页图片数量或动画要求套到 App。具体分支见 [Taste 与项目规范](references/taste-integration.md)。
+
 运行 MasterGo 流程需要当前环境可用的 MasterGo MCP，以及已打开、具备相应访问权的目标文件。读取飞书文档需要 txxprd 或其他可用的飞书读取工具；已经提供完整文档内容时不依赖飞书连接。
 
 技能不会自动修改 MCP 配置、升级插件、购买图片或发布应用。具体工具参数和生成后 QA 门禁，以当前 MasterGo server 为准。
@@ -43,6 +55,7 @@ git clone https://github.com/mastarai2024-del/txxUI.git "${CODEX_HOME:-$HOME/.co
 
 - [SKILL.md](SKILL.md)：触发条件、分工、执行分支及交付约束。
 - [绘制流程](references/workflow.md)：需求拆分、状态清单、原稿基线、逐页绘制及交接。
+- [Taste 与项目规范](references/taste-integration.md)：自动依赖准备、项目基线优先、App/营销网页分支与实际画布复核。
 - [MasterGo 工具路由](references/mastergo-tools.md)：生成、局部更新、换图、全量同步和异步写入。
 - [素材与还原](references/assets-and-fidelity.md)：灰框、实际图层复制、独立副本和复杂区域还原。
 - [布局与验收](references/layout-and-review.md)：菜单、表单、底部区域、层级、截图与内容回归。
@@ -72,4 +85,4 @@ python3 -m venv .venv
 
 本仓库的主分支是可安装来源。维护时先建独立分支/worktree；工具输出、业务材料、截图、凭证和临时记录不进入 Git。
 
-截图工具的本地测试：`python3 -m unittest discover -s tests -v`。行为决策的走查场景见 [evals/scenarios.md](evals/scenarios.md)，需要结合当前工具规则判断，不能当作已执行的画布测试。
+本地测试：`python3 -m unittest discover -s tests -v`，覆盖截图工具和 Taste 依赖的复用、缺失安装、幂等、失败清理、旧目录保护等分支。行为决策的走查场景见 [evals/scenarios.md](evals/scenarios.md)，需要结合当前工具规则判断，不能当作已执行的画布测试。

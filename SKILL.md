@@ -1,6 +1,6 @@
 ---
 name: txxui
-description: 配合 txxprd，将需求文档或原型转成 MasterGo 中可编辑的实际 UI 稿；支持按指定原稿补入口、绘制多状态页面、修复素材和统一同类控件。用于 MasterGo 设计交付，不代替 PRD 编写、HTML 交互实现或应用开发。
+description: 配合 txxprd，结合 Taste 将需求或原型转成 MasterGo 可编辑 UI 稿；按项目设计规范绘制页面、补入口、修复素材和统一控件，缺少 Taste 时自动安装。用于设计交付，不代替 PRD 或应用开发。
 metadata:
   display_name: txxUI
   source: "https://github.com/mastarai2024-del/txxUI"
@@ -9,6 +9,12 @@ metadata:
 # txxUI
 
 交付是指定 MasterGo 页面里的实际 UI 图层：文字、控件可编辑，素材完整，来源可追溯。需求文档、HTML 原型和设计稿分别记录完成状态。
+
+## 设计时调用 Taste
+
+设计新页面、优化样式或视觉评审时，先执行本技能目录内的 `python3 scripts/ensure_taste.py`（从其他目录运行时使用脚本绝对路径）。已安装的完整 Taste 会直接复用；缺失时自动安装固定的官方版本。读取返回的 `skill_file`，再按 [Taste 与项目规范](references/taste-integration.md) 选择 App 适配或营销网页流程；不能只检查安装结果却不读取和使用技能。纯素材复制、节点定位等不涉及设计判断的任务不必安装依赖。
+
+先读项目实际设计规范、指定原稿和同类组件，再应用 Taste。已有项目优先优化按钮对齐、宽高、间距、文本换行、图片边界和安全区；配色、字体与品牌风格沿用项目规范。只有用户明确要求视觉改版，或新项目尚无规范时，才提出新的视觉方向。Taste 的营销网页偏好不覆盖 App 规范、业务内容或 MasterGo 工具规则。
 
 ## 与 txxprd 配合
 
