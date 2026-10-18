@@ -2,7 +2,7 @@
 
 根据需求文档或原型，结合 Taste 和项目已有设计规范，在 MasterGo 中绘制可编辑的实际 UI 稿。
 
-txxUI 与 [txxprd](https://github.com/mastarai2024-del/txxprd) 配合：txxprd 写清需求，txxUI 将需求落实到指定画布，再把最终画板、截图和未决项交回文档流程。
+txxUI 与 [txxprd](https://github.com/mastarai2024-del/txxprd) 配合：txxprd 写清需求，txxUI 按任务与 PRD 归属确定画布，再把最终画板、截图和未决项交回文档流程。
 
 | 技能 | 负责的交付 |
 |---|---|
@@ -14,8 +14,9 @@ txxUI 与 [txxprd](https://github.com/mastarai2024-del/txxprd) 配合：txxprd �
 ## 使用
 
 ```text
-使用 $txxui，把这份 PRD 的页面画到 MasterGo 的“测试尝试”中。
-最终设计稿只读，可以复制到目标；保留原稿风格，图片需要独立保存。
+使用 $txxui，根据这份 PRD 在 MasterGo 绘制可编辑 UI 设计稿。
+新任务默认新建画布；同一任务续做复用原画布，另一份 PRD 的其他需求另建画布。
+已有原稿只读，可复制到目标；保留原稿风格，图片需要独立保存。
 ```
 
 ```text
@@ -24,6 +25,8 @@ txxUI 与 [txxprd](https://github.com/mastarai2024-del/txxprd) 配合：txxprd �
 ```
 
 可以提供飞书文档、完整导出内容、HTML 原型、截图或 MasterGo 画板。需求缺少关键规则时会指出具体缺口；已明确的目标和授权不重复询问。
+
+画布按 [任务与 PRD 归属规则](SKILL.md#画布按任务与-prd-归属) 选择：新设计默认新建独立页面，同一任务续做复用；另一份 PRD 的其他需求另建，用户明确指定目标时优先遵从。
 
 ## 安装到 Codex
 
