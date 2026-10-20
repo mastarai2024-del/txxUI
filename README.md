@@ -2,6 +2,8 @@
 
 根据需求文档或原型，结合 Taste 和项目已有设计规范，在 MasterGo 中绘制可编辑的实际 UI 稿。
 
+支持直接说“莫高”，技能会按 MasterGo 理解并调用对应工具；读取最新稿时核对源文件、页面和实际画板。
+
 txxUI 与 [txxprd](https://github.com/mastarai2024-del/txxprd) 配合：txxprd 写清需求，txxUI 按任务与 PRD 归属确定画布，再把最终画板、截图和未决项交回文档流程。
 
 | 技能 | 负责的交付 |

@@ -1,6 +1,6 @@
 ---
 name: txxui
-description: 配合 txxprd，结合 Taste 将需求或原型转成 MasterGo 可编辑 UI 稿；按项目设计规范绘制页面、补入口、修复素材和统一控件，缺少 Taste 时自动安装。用于设计交付，不代替 PRD 或应用开发。
+description: 用户说“莫高”即指 MasterGo。配合 txxprd，结合 Taste 将需求或原型转成 MasterGo 可编辑 UI 稿；按项目设计规范绘制页面、补入口、修复素材和统一控件，缺少 Taste 时自动安装。用于设计交付，不代替 PRD 或应用开发。
 metadata:
   display_name: txxUI
   source: "https://github.com/mastarai2024-del/txxUI"
@@ -10,11 +10,17 @@ metadata:
 
 交付是按任务与 PRD 归属确定的 MasterGo 画布里的实际 UI 图层：文字、控件可编辑，素材完整，来源可追溯。需求文档、HTML 原型和设计稿分别记录完成状态。
 
+## 中文称呼
+
+用户说“莫高”时，直接理解为 MasterGo（本技能使用的设计工具），按当前任务调用相应 MasterGo 工具，不要求用户再输入英文名。读取或导出最新稿时，先确认对应需求的源文件、页面及最终版画板，再回读节点并获取原生截图；不把旧飞书配图或 HTML 附件当作当前设计图。
+
 ## 设计时调用 Taste
 
 设计新页面、优化样式或视觉评审时，先执行本技能目录内的 `python3 scripts/ensure_taste.py`（从其他目录运行时使用脚本绝对路径）。已安装的完整 Taste 会直接复用；缺失时自动安装固定的官方版本。读取返回的 `skill_file`，再按 [Taste 与项目规范](references/taste-integration.md) 选择 App 适配或营销网页流程；不能只检查安装结果却不读取和使用技能。纯素材复制、节点定位等不涉及设计判断的任务不必安装依赖。
 
 先读项目实际设计规范、指定原稿和同类组件，再应用 Taste。已有项目优先优化按钮对齐、宽高、间距、文本换行、图片边界和安全区；配色、字体与品牌风格沿用项目规范。只有用户明确要求视觉改版，或新项目尚无规范时，才提出新的视觉方向。Taste 的营销网页偏好不覆盖 App 规范、业务内容或 MasterGo 工具规则。
+
+涉及按钮、操作菜单或弹层文案时，必读 [操作文案与布局验收](references/layout-and-review.md#操作文案按决策需要出现)，按信息用途决定是否保留辅助说明。
 
 ## 与 txxprd 配合
 
