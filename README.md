@@ -62,7 +62,7 @@ Taste 完整流程原本面向营销网页。txxUI 在 App、后台和已有产�
 - [MasterGo 工具路由](references/mastergo-tools.md)：生成、局部更新、换图、全量同步和异步写入。
 - [素材与还原](references/assets-and-fidelity.md)：灰框、实际图层复制、独立副本和复杂区域还原。
 - [布局与验收](references/layout-and-review.md)：菜单、表单、底部区域、层级、截图与内容回归。
-- [两轮实践复盘](references/lessons.md)：从开始绘制到最后统一的经过，以及 24 项坑点。
+- [多轮实践复盘](references/lessons.md)：从绘制、修正到 HTML 与文档同步的经过，以及可复用的坑点清单。
 - [任务与交接模板](templates/ui-task.md)：项目私有状态记录及 txxprd 交接。
 
 公开复盘已去掉业务文档地址、真实节点、账户、本机路径及原始图片。像素值和页面数量是案例，不是通用设计规范。
