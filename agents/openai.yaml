@@ -1,6 +1,6 @@
 interface:
   display_name: "txxUI"
-  short_description: "结合 Taste 和项目设计规范，绘制并核对 MasterGo 可编辑 UI 稿"
-  default_prompt: "使用 $txxui，自动检查并补齐 Taste，先读取项目设计规范；按任务与 PRD 归属默认新建 MasterGo 画布，同一任务续做复用，另一份 PRD 的其他需求另建，用户指定目标时优先遵从；根据需求或原型设计可编辑 UI 稿，并遵循当前工具的验收流程。"
+  short_description: "学习设计师细节，按项目风格绘制并核对 MasterGo 可编辑 UI 稿"
+  default_prompt: "使用 $txxui，先确定整页还原或保留布局迁移细节，核对项目风格与来源，再按需求学习或绘制 MasterGo 可编辑 UI；只读学习不写画布，新设计按任务归属选择目标并遵循当前工具门禁。"
 policy:
   allow_implicit_invocation: true
