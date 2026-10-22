@@ -1,6 +1,6 @@
 # txxUI
 
-根据需求文档或原型，结合 Taste 和项目已有设计规范，在 MasterGo 中绘制可编辑的实际 UI 稿。
+学习设计师的可量化细节，结合项目规范、需求和 Taste，在 MasterGo 中绘制可编辑的实际 UI 稿。
 
 支持直接说“莫高”，技能会按 MasterGo 理解并调用对应工具；读取最新稿时核对源文件、页面和实际画板。
 
@@ -27,6 +27,14 @@ txxUI 与 [txxprd](https://github.com/mastarai2024-del/txxprd) 配合：txxprd �
 ```
 
 可以提供飞书文档、完整导出内容、HTML 原型、截图或 MasterGo 画板。需求缺少关键规则时会指出具体缺口；已明确的目标和授权不重复询问。
+
+```text
+使用 $txxui，学习这个项目设计师 AFTER / 最新版 V2 的控件细节。
+保留现有页面布局和状态编排，排除原型、AI稿、旧版与错别字。
+先对比已有一致项与差异，提炼参数、组件配方和例外，再按项目档案复用。
+```
+
+风格学习默认只读画布。方法见 [风格学习与量化](references/style-learning.md)，Bubbo项目使用 [设计师风格档案](references/profiles/bubbo.md)；其他项目建立各自档案。档案区分规范、实测、推导、估算与建议，不把某个项目的颜色或整页坐标当全局默认。
 
 画布按 [任务与 PRD 归属规则](SKILL.md#画布按任务与-prd-归属) 选择：新设计默认新建独立页面，同一任务续做复用；另一份 PRD 的其他需求另建，用户明确指定目标时优先遵从。
 
@@ -64,6 +72,9 @@ Taste 完整流程原本面向营销网页。txxUI 在 App、后台和已有产�
 - [MasterGo 工具路由](references/mastergo-tools.md)：生成、局部更新、换图、全量同步和异步写入。
 - [素材与还原](references/assets-and-fidelity.md)：灰框、实际图层复制、独立副本和复杂区域还原。
 - [布局与验收](references/layout-and-review.md)：菜单、表单、底部区域、层级、截图与内容回归。
+- [风格学习与量化](references/style-learning.md)：节点准入、独立家族、组件配方、增量刷新和风格验收。
+- [Bubbo设计师风格](references/profiles/bubbo.md)：已采样的字体、色阶、控件、状态、素材与不继承的问题。
+- [风格档案模板](templates/style-profile.md)：私有来源映射、参数证据和更新记录。
 - [两轮实践复盘](references/lessons.md)：从开始绘制到最后统一的经过，以及 24 项坑点。
 - [任务与交接模板](templates/ui-task.md)：项目私有状态记录及 txxprd 交接。
 
@@ -90,4 +101,16 @@ python3 -m venv .venv
 
 本仓库的主分支是可安装来源。维护时先建独立分支/worktree；工具输出、业务材料、截图、凭证和临时记录不进入 Git。
 
-本地测试：`python3 -m unittest discover -s tests -v`，覆盖截图工具和 Taste 依赖的复用、缺失安装、幂等、失败清理、旧目录保护等分支。行为决策的走查场景见 [evals/scenarios.md](evals/scenarios.md)，需要结合当前工具规则判断，不能当作已执行的画布测试。
+本地测试：`python3 -m unittest discover -s tests -v`，覆盖截图工具、Taste依赖和风格属性清点。行为走查见 [evals/scenarios.md](evals/scenarios.md)；它们不能当作画布或App实机测试。
+
+## 离线风格属性清点
+
+将get_selection_node原始MCP JSON保存到项目私有目录，按 [模板](templates/style-profile.md) 写显式来源清单，再执行：
+
+```bash
+python3 scripts/style_inventory.py \
+  --manifest /path/to/private/sample-manifest.json \
+  --output /path/to/private/style-inventory.json
+```
+
+只使用Python标准库，不联网、不改画布。输出明示属性、未知项、来源快照指纹、出现次数和独立组件家族数；不输出业务文字与资产URL。仅designer-final/spec进入统计，AI/原型/旧版/归属不明来源排除。已有输出默认保护，确需覆盖时加`--overwrite`。统计结果是清点材料，角色判断、规范释义和原生截图仍需人工核对。
