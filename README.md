@@ -11,6 +11,8 @@ txxUI 与 [txxprd](https://github.com/mastarai2024-del/txxprd) 配合：txxprd �
 
 显示名为 **txxUI**，技能标识和调用名为 **txxui / $txxui**。
 
+11 月 1–2 日的规则梳理见[两日迭代总结](references/iteration-2026-11-01-02.md)：区分只读取图与改图，补全设置状态、复制落点检查，以及最终图片的全部引用交接。
+
 ## 使用
 
 ```text
