@@ -1,6 +1,6 @@
 # txxUI
 
-根据需求文档或原型，结合 Taste 和项目已有设计规范，在 MasterGo 中绘制可编辑的实际 UI 稿。
+根据需求文档或原型，继承项目规范与用户认可的设计师定稿，在 MasterGo 中绘制可编辑 UI。按同页面、同状态提取布局、字体、图标、颜色与组件角色，优先复用真实组件，并用 Taste 辅助检查层级与细节。
 
 txxUI 与 [txxprd](https://github.com/mastarai2024-del/txxprd) 配合：txxprd 写清需求，txxUI 按任务与 PRD 归属确定画布，再把最终画板、截图和未决项交回文档流程。
 
@@ -57,6 +57,8 @@ Taste 完整流程原本面向营销网页。txxUI 在 App、后台和已有产�
 ## 里面有什么
 
 - [SKILL.md](SKILL.md)：触发条件、分工、执行分支及交付约束。
+- [巴布风格画像](references/babu-designer-style.md)：三个画布提炼的巴布专用字体、颜色、排布与组件参数；当前定稿优先。
+- [设计师风格](references/designer-style.md)：成对比较、角色属性、完整组件复用与同尺寸检查；项目画像按需加载，私有图证保存在项目记录。
 - [绘制流程](references/workflow.md)：需求拆分、状态清单、原稿基线、逐页绘制及交接。
 - [Taste 与项目规范](references/taste-integration.md)：自动依赖准备、项目基线优先、App/营销网页分支与实际画布复核。
 - [MasterGo 工具路由](references/mastergo-tools.md)：生成、局部更新、换图、全量同步和异步写入。
