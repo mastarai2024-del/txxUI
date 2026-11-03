@@ -11,6 +11,10 @@ txxUI 与 [txxprd](https://github.com/mastarai2024-del/txxprd) 配合：txxprd �
 
 显示名为 **txxUI**，技能标识和调用名为 **txxui / $txxui**。
 
+## 当前维护版
+
+2026-11-03 汇总版位于 `main`：整合设计师定稿继承、字体统一、AI绘制 归属及最终截图交接。中文使用思源黑体，英文和数字使用钉钉进步体；混排、缺失字体和画布渲染分别核验。详细变化见 [变更记录](CHANGELOG.md)。
+
 ## 使用
 
 ```text
@@ -48,7 +52,7 @@ python3 "${CODEX_HOME:-$HOME/.codex}/skills/txxui/scripts/ensure_taste.py"
 
 返回的 `skill_file` 可由 Agent 直接读取，本次任务即可使用；新技能在下一轮对话的技能发现列表中可用。`--check-only` 只检查；`--skills-root /path/to/isolated/skills` 仅在指定目录检查和安装，适合隔离验证。
 
-Taste 完整流程原本面向营销网页。txxUI 在 App、后台和已有产品中采用其层级、排版、布局与截图审查方法，配色、字体和按钮形态仍由项目设计规范决定；不会把随机品牌配色、网页图片数量或动画要求套到 App。具体分支见 [Taste 与项目规范](references/taste-integration.md)。
+Taste 完整流程原本面向营销网页。txxUI 在 App、后台和已有产品中采用其层级、排版、布局与截图审查方法，字体统一为中文思源黑体、英文和数字钉钉进步体，详见 [字体统一规则](SKILL.md#字体统一规则)；字号、行高、配色和按钮形态仍由项目设计规范决定；不会把随机品牌配色、网页图片数量或动画要求套到 App。具体分支见 [Taste 与项目规范](references/taste-integration.md)。
 
 运行 MasterGo 流程需要当前环境可用的 MasterGo MCP，以及已打开、具备相应访问权的目标文件。读取飞书文档需要 txxprd 或其他可用的飞书读取工具；已经提供完整文档内容时不依赖飞书连接。
 
