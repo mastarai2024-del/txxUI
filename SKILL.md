@@ -26,6 +26,7 @@ metadata:
 |---|---|
 | 修改现有页面、补开关或入口 | `get_selection_node` 读精确目标，保留未改属性，用 `agent_update_node` 做局部增量 |
 | 菜单归类或调整层级 | 先核对[旧入口到新路径的映射](references/workflow.md#菜单归类与入口迁移)，再修改首页、二级页与返回路径 |
+| 页面新增小操作或媒体加载状态 | 核对[操作位置与图标含义](references/layout-and-review.md#新增操作的位置与含义)及[媒体状态](references/workflow.md#媒体准备与可操作状态)，保留其他需求已占用的区域 |
 | 原稿复制、补已有状态或修复缺图 | 读来源与目标，原生复制完整图层；换图用 `agent_replace_node`，见 [素材与还原](references/assets-and-fidelity.md) |
 | 设计全新页面 | 第一个 MasterGo 动作为 `design_page`，后续按当前返回准备并逐页提交；在允许阶段落实「AI绘制」目标 |
 | 已有本地文件全量覆盖画布 | 按 `agent_sync_design` 的当前校验与确认要求，不把局部修正升级为全量覆盖 |
