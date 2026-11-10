@@ -26,6 +26,7 @@ metadata:
 |---|---|
 | 修改现有页面、补开关或入口 | `get_selection_node` 读精确目标，保留未改属性，用 `agent_update_node` 做局部增量 |
 | 菜单归类或调整层级 | 先核对[旧入口到新路径的映射](references/workflow.md#菜单归类与入口迁移)，再修改首页、二级页与返回路径 |
+| 首页增加折叠功能区 | 核对[折叠摘要与展开状态](references/layout-and-review.md#折叠摘要与展开状态)，保留原页结构，按当前确认覆盖默认态、展开态和弹层 |
 | 页面新增小操作或媒体加载状态 | 核对[操作位置与图标含义](references/layout-and-review.md#新增操作的位置与含义)及[媒体状态](references/workflow.md#媒体准备与可操作状态)，保留其他需求已占用的区域 |
 | 原稿复制、补已有状态或修复缺图 | 读来源与目标，原生复制完整图层；换图用 `agent_replace_node`，见 [素材与还原](references/assets-and-fidelity.md) |
 | 设计全新页面 | 第一个 MasterGo 动作为 `design_page`，后续按当前返回准备并逐页提交；在允许阶段落实「AI绘制」目标 |
@@ -35,7 +36,7 @@ metadata:
 
 以当前 MasterGo 工具规则为准，详见 [工具路由与异步写入](references/mastergo-tools.md)。只有用户要求前端代码或交互 HTML 时才走代码导出/原型流程。
 
-只回填现有 UI 不启动新页面绘制，也不顺手修来源稿。日期、编号和“最新”标记只是线索，按 [来源与确认范围](references/workflow.md#1-分清输入分别决定什么) 核对实际状态；用户允许 HTML 补缺或明确改为仅维护 HTML 时，交给 `txxprd` 按分支处理，不把补图算作 MasterGo 完稿。
+只回填现有 UI 不启动新页面绘制，也不顺手修来源稿。日期、编号和“最新”标记只是线索，按 [来源与确认范围](references/workflow.md#1-分清输入分别决定什么) 核对实际状态。用户要求先调 HTML 时按[先原型再同步](references/workflow.md#先原型再同步)处理；允许 HTML 补缺或明确改为仅维护 HTML 时，交给 `txxprd` 按分支处理，不把补图算作 MasterGo 完稿。
 
 ## 字体统一规则
 
