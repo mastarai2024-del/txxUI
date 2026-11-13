@@ -30,6 +30,7 @@ metadata:
 | 首页增加折叠功能区 | 核对[折叠摘要与展开状态](references/layout-and-review.md#折叠摘要与展开状态)，保留原页结构，按当前确认覆盖默认态、展开态和弹层 |
 | 页面新增小操作或媒体加载状态 | 核对[操作位置与图标含义](references/layout-and-review.md#新增操作的位置与含义)及[媒体状态](references/workflow.md#媒体准备与可操作状态)，保留其他需求已占用的区域 |
 | 原稿复制、补已有状态或修复缺图 | 读来源与目标，原生复制完整图层；换图用 `agent_replace_node`，见 [素材与还原](references/assets-and-fidelity.md) |
+| 仅修改现成位图的一处，其他像素与尺寸须不变 | 按[局部位图的严格保持](references/assets-and-fidelity.md#局部位图的严格保持)锁定原文件和允许区域，核验实际交付文件；不据此修改设计源 |
 | 设计全新页面 | 第一个 MasterGo 动作为 `design_page`，后续按当前返回准备并逐页提交；在允许阶段落实「AI绘制」目标 |
 | 已有本地文件全量覆盖画布 | 按 `agent_sync_design` 的当前校验与确认要求，不把局部修正升级为全量覆盖 |
 | 读取最新设计或回贴 PRD | 按实际内容与已确认范围匹配最终状态，只读导出原生图；缺图单列，不另生成 HTML |
