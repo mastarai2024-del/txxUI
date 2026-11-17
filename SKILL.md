@@ -1,6 +1,6 @@
 ---
 name: txxui
-description: 用户说“莫高”即指 MasterGo。根据 PRD 或原型，在「AI绘制」下新增或增量更新可编辑 UI；巴布先从当前模拟 APP 对应页面与实际入口建立基线，再继承组件与风格，交付截图供文档回贴。
+description: 用户说“莫高”即指 MasterGo。根据 PRD 或原型，在「AI绘制」下新增或增量更新可编辑 UI，处理组件复用、实例关联与自动布局；巴布先从当前模拟 APP 对应页面与实际入口建立基线，再继承组件与风格，交付截图供文档回贴。
 metadata:
   display_name: txxUI
   source: "https://github.com/mastarai2024-del/txxUI"
@@ -10,7 +10,7 @@ metadata:
 
 涉及绘制时交付实际 MasterGo 图层与对应截图。现有项目保留原稿结构、素材和风格，按确认需求做最小增量；需求文档、静态设计与真实应用分别记录状态。
 
-巴布 APP 的设计、视觉修改与评审，先按 [运行页面基线](references/app-baseline.md) 读取本机项目入口，打开当前交互手机的对应页面；绘制前从真实父页面进入并核对返回，以该页结构、素材和组件为起点，只做本次确认的增量。已确认但尚未进入运行版本的改动仍按本次需求执行。[巴布设计师风格画像](references/babu-designer-style.md) 只补充其已覆盖模块，不代替当前页面；字体 family 继续按下文统一规则。纯回填已有图不额外走完整路径，其他项目按其已指定来源执行。
+巴布 APP 的设计、视觉修改与现状评审，先按 [运行页面基线](references/app-baseline.md) 读取本机项目入口，打开当前交互手机的对应页面；绘制前从真实父页面进入并核对返回，以该页结构、素材和组件为起点，只做本次确认的增量。已确认但尚未进入运行版本的改动仍按本次需求执行。[巴布设计师风格画像](references/babu-designer-style.md) 只补充其已覆盖模块，不代替当前页面；字体 family 继续按下文统一规则。历史改稿复盘以被比较的版本为基线，按[改稿分析与沉淀](references/designer-change-review.md)处理，不为比较旧稿重建无关运行环境。纯回填已有图不额外走完整路径，其他项目按其已指定来源执行。
 
 ## 画布按任务与 PRD 归属
 
@@ -24,8 +24,11 @@ metadata:
 
 | 请求 | 路径 |
 |---|---|
-| 巴布页面设计、修改或评审 | 先读[运行页面基线](references/app-baseline.md)，核对当前页面与本次相关入口；绘制方法仍按下列分支选择 |
+| 巴布页面设计、修改或现状评审 | 先读[运行页面基线](references/app-baseline.md)，核对当前页面与本次相关入口；绘制方法仍按下列分支选择 |
+| 分析设计师如何改 AI 稿、沉淀经验 | 按[改稿分析与沉淀](references/designer-change-review.md)锁定双方版本，结合原生属性与逐状态图片解释变化；仅维护获准的技能，不据此改设计或产品规则 |
 | 修改现有页面、补开关或入口 | `get_selection_node` 读精确目标，保留未改属性，用 `agent_update_node` 做局部增量 |
+| 组件复用、状态调整或明确要求组件化/母版联动 | 按[组件外观与实例](references/components-and-instances.md)选真实样板，分清内容、状态和传播范围；创建母版仍须明确需求 |
+| 整理自动布局、长内容或换实例后的尺寸问题 | 按[自动布局](references/auto-layout.md)处理语义容器及固定/撑开/填充，验证实际内容变化，保留现有视觉与小改范围 |
 | 菜单归类或调整层级 | 先核对[旧入口到新路径的映射](references/workflow.md#菜单归类与入口迁移)，再修改首页、二级页与返回路径 |
 | 首页增加折叠功能区 | 核对[折叠摘要与展开状态](references/layout-and-review.md#折叠摘要与展开状态)，保留原页结构，按当前确认覆盖默认态、展开态和弹层 |
 | 紧凑列表、组摘要或备注状态调整 | 读[紧凑列表与状态可读性](references/layout-and-review.md#紧凑列表与状态可读性)，区分后台关联与可见内容，检查长标题、热区及行内展开 |
@@ -59,6 +62,8 @@ metadata:
 5. **文案说明效果。** 控件用简短动作名，说明只保留用户作决定需要的信息；不重复标题、不放内部规则或制作备注。详见 [操作文案与布局](references/layout-and-review.md#操作文案按决策需要出现)。
 6. **CHECKPOINT · 有界提交与核验。** 新页逐页提交，局部修改小批处理。accepted 记为处理中；超时或未知先对账。按当前工具允许的时机回读节点与截图，按同逻辑尺寸对照设计师基线，检查新增节点的角色样式、文字、素材、遮挡、换行和底部控件。**STOP · 当前工具要求停下或独立 QA 确认时**，说明实际要求，不用其他通道绕过。
 
+组件相关任务在[组件与实例](references/components-and-instances.md)中先核对样板的比例、字体、留白、形状与图标，再处理属性和关联；尺寸行为按[自动布局](references/auto-layout.md)执行。先验证代表组件和实际页面，再推广到获准范围；原生类型、母版数量或自动布局标记不能代替画面质量与内容变化验证。
+
 ## 交给文档的内容
 
 任务包含 PRD 更新时，配合 `txxprd`；飞书读取使用其 `lark-cli --as user` 路径，不用 WebFetch。只读设计请求不自动写回文档。
@@ -76,6 +81,9 @@ metadata:
 - [运行页面基线](references/app-baseline.md)：巴布默认先进入实际页面；区分交互手机、导航图与源码，按版本复用组件和入口，记录缺口与验收边界。
 - [巴布风格画像](references/babu-designer-style.md)：历史局部参数、字体片段与模块例外，核对当前对应页面后参考。
 - [设计师风格](references/designer-style.md)：选最终稿、成对比较、提取角色属性、复用组件与同尺寸验收。
+- [组件外观与实例](references/components-and-instances.md)：真实样板、视觉细节、变体/属性、嵌套复用、迁移与继承，按任务加载。
+- [自动布局](references/auto-layout.md)：语义容器、尺寸伸缩、动态混排、长内容与滚动/安全区，局部任务只读相关部分。
+- [改稿分析与沉淀](references/designer-change-review.md)：还原版本关系，区分实际差异、设计解释、保留项与疑点，将方法和模块案例分别维护。
 - [绘制流程](references/workflow.md)：复杂状态、画布层级和完整交接。
 - [素材与还原](references/assets-and-fidelity.md)：灰框、复制、图片与实例独立性。
 - [布局与验收](references/layout-and-review.md)：菜单、表单、位置和视觉回归。
