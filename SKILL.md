@@ -52,7 +52,7 @@ metadata:
 
 ## 设计依据与执行
 
-1. **固定视觉基线。** 按[设计师风格](references/designer-style.md)从认可稿或同模块状态提取同角色属性。当前确认决定增量，续做只重查受到影响且有变化的来源。
+1. **固定视觉基线。** 每次绘制或改稿前打开项目登记的设计规范。登记了多套规范时，逐套核对本次涉及的样式、组件和交互状态，按项目已确认的适用范围取用。再按[设计师风格](references/designer-style.md)从认可稿或同模块状态提取同角色属性。当前确认决定增量，续做只重查受到影响且有变化的来源。
 2. **按需使用 Taste。** 涉及新布局、样式决策或视觉评审时按[项目适配](references/taste-integration.md)准备并读取依赖。
 3. **列出影响。** 按[页面与状态清单](references/workflow.md#2-建立页面与状态清单)核对入口、触发条件、结果与返回，记录受影响状态及引用。文案按[操作需要](references/layout-and-review.md#操作文案按决策需要出现)交代后果。
 4. **最小范围绘制。** 按用户指向定位节点，以最新快照修改获准属性。共享组件的变更先核对[引用范围](references/assets-and-fidelity.md#共享关系与修改范围)。按[组件与实例](references/components-and-instances.md)复用原生样板，按[自动布局](references/auto-layout.md)核对实际内容伸缩。
