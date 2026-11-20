@@ -13,11 +13,7 @@ txxUI 与 [txxprd](https://github.com/mastarai2024-del/txxprd) 配合：txxprd �
 
 ## 当前维护版
 
-2026-11-19 将模块画像迁回项目，并补充指标说明和横竖屏弹窗的验证方法。
-
-2026-11-17 补充[组件外观与实例](references/components-and-instances.md)和[自动布局](references/auto-layout.md)：先按真实样板核对比例、文字、留白、形状和图标，再处理变体、属性、嵌套继承与长内容伸缩。保留既有字体、页面基线、AI绘制 归属、局部修改、工具门禁和文档交接；普通改图不自动创建组件库。技能规则检查与行为试跑不代表实际新设计的视觉验收。
-
-2026-11-11 增加[运行页面基线](references/app-baseline.md)：区分交互手机、导航图与对应源码，实际走相关入口与返回，逐模块提炼有版本依据的规范。保留同任务记录、前后配对、共享组件与小改边界。中文使用思源黑体，英文和数字使用钉钉进步体；实际页面与该要求存在差异时明确记录。详细变化见 [变更记录](CHANGELOG.md)。
+当前项目提供业务行为、设计参数、字体约定和目标层级。技能提供设计核对和交付方法。[变更记录](CHANGELOG.md)
 
 ## 使用
 
@@ -34,7 +30,7 @@ txxUI 与 [txxprd](https://github.com/mastarai2024-del/txxprd) 配合：txxprd �
 
 可以提供飞书文档、完整导出内容、HTML 原型、截图或 MasterGo 画板。需求缺少关键规则时会指出具体缺口；已明确的目标和授权不重复询问。
 
-项目运行版本 的实际地址、目录和对应源码登记在本机个人上下文或项目私有记录，技能不内置地址；换机后核对当前入口。导航图用于定位，当前交互手机用于核实现状，源码用于读取匹配版本的组件参数。源码、编译包、资源、截图与模拟数据不进入技能仓库。
+运行地址、设计参数与素材来源保存在项目记录，从[运行页面基线](references/app-baseline.md)查找当次实际入口。
 
 既有页面视觉修改可使用 `scripts/contact_sheet.py --pairs /path/to/pairs.json --output /path/to/paired.png` 生成左前右后的对照及来源索引，路径相对清单解析；详见[修改前后配对](references/layout-and-review.md#修改前后配对)。原图保持不变，工具检查不代替视觉或实机验收。与 txxprd 协作时共用已有任务记录，登记本轮确认及受影响资产。
 
@@ -77,10 +73,7 @@ Taste 完整流程原本面向营销网页。txxUI 在 App、后台和已有产�
 - [MasterGo 工具路由](references/mastergo-tools.md)：生成、局部更新、换图、全量同步和异步写入。
 - [素材与还原](references/assets-and-fidelity.md)：灰框、实际图层复制、独立副本和复杂区域还原。
 - [布局与验收](references/layout-and-review.md)：菜单、表单、底部区域、层级、截图与内容回归。
-- [两轮实践复盘](references/lessons.md)：从开始绘制到最后统一的经过，以及 24 项坑点。
 - [任务与交接模板](templates/ui-task.md)：项目私有状态记录及 txxprd 交接。
-
-公开复盘已去掉业务文档地址、真实节点、账户、本机路径及原始图片。像素值和页面数量是案例，不是通用设计规范。
 
 ## 截图总览工具
 
